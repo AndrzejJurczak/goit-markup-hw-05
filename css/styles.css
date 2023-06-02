@@ -166,6 +166,8 @@ header {
 .button-menu:hover,
 .button-menu:focus {
   cursor: pointer;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-portfolio-list {
   display: flex;
@@ -191,6 +193,8 @@ header {
   color: var(--secondary-text-color);
   background-color: var(--fourth-color);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer {
   padding-top: 60px;
@@ -231,6 +235,8 @@ header {
 .icon-contact:hover {
   color: var(--fourth-color);
   cursor: pointer;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .navigation-contact-item:hover,
 .navigation-contact-item:focus,
@@ -239,6 +245,8 @@ header {
   color: var(--fourth-color);
   cursor: pointer;
   fill: currentColor;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*end links*/
@@ -358,6 +366,8 @@ header {
 .our-customers-link:focus {
   cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .about-client {
   padding: 20px 24px;
@@ -419,6 +429,8 @@ header {
   cursor: pointer;
   color: var(--background-color-1);
   background-color: var(--fourth-color);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .lorem-icon {
   background-color: var(--fifth-color);
@@ -451,6 +463,8 @@ header {
 .our-client-link:focus {
   cursor: pointer;
   color: var(--fourth-color);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .our-client-logo-list svg {
@@ -492,6 +506,8 @@ header {
   border-radius: 50%;
   fill: currentColor;
   background: var(--fourth-color);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* ----- end icons ----- */
 .footer-wrap {
@@ -504,20 +520,27 @@ header {
   position: absolute;
   width: 528px;
   height: 581px;
-  left: 536px;
-  top: 221px;
+  left: 50%;
+  top: 50%;
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  position: fixed;
+  z-index: 1;
+  transition-property: visibility, opacity, transform;
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%) scale(1.5) skew(0deg, 0deg);
+  display: block;
 }
 
 .close-btn {
   position: absolute;
   width: 30px;
   height: 30px;
-  left: 480px;
-  top: 229px;
+  left: 490px;
+  top: 8px;
   border-radius: 50%;
   background-color: var(--background-color-1);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -529,5 +552,7 @@ header {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  transform: translateX(-50%) translateY(-50%) scale(0) rotate(0deg)
+    skew(0deg, 0deg);
 }
 /************ END BACKDROP ************************/
