@@ -82,7 +82,9 @@
       <section class="hero">
         <div class="container">
           <h1 class="main-title">EFEKTYWNE ROZWIĄZANIA DLA WASZEGO BIZNESU</h1>
-          <button class="main-button" type="button">Zamów usługę</button>
+          <button class="main-button" type="button" data-modal-open>
+            Zamów usługę
+          </button>
         </div>
       </section>
       <section class="section lorem">
@@ -459,5 +461,15 @@
       </div>
     </footer>
     <!--end footer-->
+
+    <!-- window modal - okno modalne -->
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="close-btn" data-modal-close>X</button>
+      </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>
