@@ -17,6 +17,7 @@
   --footer-color--2: rgba(255, 255, 255, 0.1);
   --borderColor: #eee;
   --icon-style: #afb1b8;
+  --cubic-bezier: (0.4, 0, 0.2, 1);
 }
 /* end global variables */
 
@@ -146,6 +147,17 @@ header {
 .current {
   color: var(--fourth-color);
 }
+.current::after {
+  content: "";
+  display: block;
+  position: relative;
+  position: absolute;
+  width: 58px;
+  height: 4px;
+  margin-top: 28px;
+  background: var(--fourth-color);
+  border-radius: 2px;
+}
 .main-button {
   font-family: inherit;
   font-weight: 700;
@@ -167,7 +179,7 @@ header {
 .button-menu:focus {
   cursor: pointer;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--cubic-bezier);
 }
 .button-portfolio-list {
   display: flex;
@@ -194,7 +206,7 @@ header {
   background-color: var(--fourth-color);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--cubic-bezier);
 }
 .footer {
   padding-top: 60px;
@@ -220,7 +232,6 @@ header {
 }
 .bottom-contact-link {
   line-height: 1.71;
-  letter-spacing: 0.03em;
   color: var(--footer-color--1);
   text-decoration: inherit;
   font-style: normal;
@@ -236,7 +247,7 @@ header {
   color: var(--fourth-color);
   cursor: pointer;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--cubic-bezier);
 }
 .navigation-contact-item:hover,
 .navigation-contact-item:focus,
@@ -246,7 +257,7 @@ header {
   cursor: pointer;
   fill: currentColor;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--cubic-bezier);
 }
 
 /*end links*/
@@ -367,7 +378,7 @@ header {
   cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--cubic-bezier);
 }
 .about-client {
   padding: 20px 24px;
@@ -430,7 +441,7 @@ header {
   color: var(--background-color-1);
   background-color: var(--fourth-color);
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--cubic-bezier);
 }
 .lorem-icon {
   background-color: var(--fifth-color);
@@ -464,7 +475,7 @@ header {
   cursor: pointer;
   color: var(--fourth-color);
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--cubic-bezier);
 }
 
 .our-client-logo-list svg {
@@ -507,52 +518,104 @@ header {
   fill: currentColor;
   background: var(--fourth-color);
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--cubic-bezier);
 }
 /* ----- end icons ----- */
 .footer-wrap {
   display: flex;
   align-items: baseline;
 }
-
+.what-we-do-item {
+  position: relative;
+}
+.label {
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.17;
+  color: var(--fifth-color);
+  text-align: center;
+  text-transform: uppercase;
+  padding: 27px;
+  text-align: center;
+}
+.box-text-1,
+.box-text-2,
+.box-text-3 {
+  position: absolute;
+  width: 370px;
+  height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
+  border: 1px solid var(--button-text-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  bottom: 0;
+}
+.not-visibility-description {
+  position: relative;
+  overflow: hidden;
+}
+.description {
+  position: absolute;
+  max-width: 370px;
+  left: 0;
+  top: 0;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--fifth-color);
+  background: rgba(33, 150, 243, 0.9);
+  padding: 49px 45px 49px 24px;
+  transform: translateY(100%);
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic-bezier);
+}
+.not-visibility-description:hover .description,
+.our-customers-item:hover .description {
+  transform: translateY(0);
+}
 /**************** zadanie 5 okno modalne BACKDROP ***************/
 .backdrop {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition-property: opacity, visibility;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic-bezier);
+  pointer-events: painted;
+}
+.modal {
   position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width: 528px;
   height: 581px;
-  left: 50%;
-  top: 50%;
+  border-radius: 4px;
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  position: fixed;
-  z-index: 1;
-  transition-property: visibility, opacity, transform;
-  visibility: visible;
-  opacity: 1;
-  transform: translateX(-50%) translateY(-50%) scale(1.5) skew(0deg, 0deg);
-  display: block;
 }
-
-.close-btn {
-  position: absolute;
+.modal-close {
+  position: relative;
   width: 30px;
   height: 30px;
   left: 490px;
   top: 8px;
   border-radius: 50%;
-  background-color: var(--background-color-1);
+  background-color: var(--fourth-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
 }
 
 .is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: translateX(-50%) translateY(-50%) scale(0) rotate(0deg)
+  transform: translateX(50) translateY(50) scale(1.5) rotate(0deg)
     skew(0deg, 0deg);
 }
 /************ END BACKDROP ************************/
