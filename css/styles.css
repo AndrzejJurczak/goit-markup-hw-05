@@ -550,7 +550,7 @@ header {
 .what-we-do-item {
   position: relative;
 }
-.label {
+.solution {
   font-family: inherit;
   font-weight: 700;
   line-height: 1.17;
@@ -595,34 +595,6 @@ header {
 .not-visibility-description:hover .hidden-description {
   transform: translateY(0);
 }
-
-/*
-.not-visibility-description {
-  position: relative;
-  overflow: hidden;
-}
-.description {
-  position: absolute;
-  max-width: 370px;
-  left: 0;
-  top: 0;
-  font-family: inherit;
-  font-size: 18px;
-  line-height: 1.56;
-  color: var(--fifth-color);
-  background: rgba(33, 150, 243, 0.9);
-  padding: 49px 45px 49px 24px;
-  transform: translateY(100%);
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.not-visibility-description:hover .description,
-.our-customers-item:hover .description {
-  transform: translateY(0);
-  color: var(--fifth-color);
-}*/
-/* koniec aminacja opisu na portfoli */
 
 /**************** zadanie 5 okno modalne BACKDROP ***************/
 .close-x {
@@ -677,7 +649,7 @@ header {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: rotate(120deg);
+  transform: scale(0.1) rotate(360deg);
 }
 /************ END BACKDROP ************************/
 .about-client > h3 {
