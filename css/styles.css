@@ -35,6 +35,7 @@ h5,
 h6,
 p {
   margin: 0;
+  text-decoration: none;
 }
 img {
   display: block;
@@ -123,7 +124,7 @@ header {
   font-weight: 500;
   line-height: 1.17;
   letter-spacing: 0.02em;
-  /*color: var(--main-text-color);*/
+  color: var(--main-text-color);
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -147,6 +148,10 @@ header {
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.navigation-link:hover,
+.navigation-link:focus {
+  color: var(--fourth-color);
 }
 
 .current {
@@ -376,9 +381,6 @@ header {
 }
 .our-customers-link {
   display: block;
-  transition-property: color, box-shadow;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .our-customers-item a:hover,
@@ -396,6 +398,7 @@ header {
   border-right: 1px solid var(--borderColor);
   border-bottom: 1px solid var(--borderColor);
   border-left: 1px solid var(--borderColor);
+  color: var(--main-text-color);
 }
 .client-name {
   font-weight: 700;
@@ -558,6 +561,36 @@ header {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   bottom: 0;
 }
+/* aminacja opisu na portfoli */
+.description {
+  width: 370px;
+  height: 294px;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--fifth-color);
+  padding: 49px 45px 49px 24px;
+}
+.not-visibility-description {
+  position: relative;
+  overflow: hidden;
+}
+.hidden-description {
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  background: rgba(33, 150, 243, 0.9);
+  transform: translateY(100%);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.not-visibility-description:hover .hidden-description {
+  transform: translateY(0);
+}
+
+/*
 .not-visibility-description {
   position: relative;
   overflow: hidden;
@@ -582,7 +615,9 @@ header {
 .our-customers-item:hover .description {
   transform: translateY(0);
   color: var(--fifth-color);
-}
+}*/
+/* koniec aminacja opisu na portfoli */
+
 /**************** zadanie 5 okno modalne BACKDROP ***************/
 .backdrop {
   width: 100%;
@@ -608,6 +643,11 @@ header {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   transform: translate(-50%, -50%);
 }
+.close-button {
+  width: 18px;
+  height: 18px;
+  fill: var(--button-text-color);
+}
 .modal-close {
   position: absolute;
   width: 30px;
@@ -628,3 +668,6 @@ header {
     skew(0deg, 0deg);
 }
 /************ END BACKDROP ************************/
+.about-client > h3 {
+  text-decoration: none;
+}
