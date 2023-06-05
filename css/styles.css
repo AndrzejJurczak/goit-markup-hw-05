@@ -17,7 +17,6 @@
   --footer-color--2: rgba(255, 255, 255, 0.1);
   --borderColor: #eee;
   --icon-style: #afb1b8;
-  --cubic-bezier: (0.4, 0, 0.2, 1);
 }
 /* end global variables */
 
@@ -124,7 +123,10 @@ header {
   font-weight: 500;
   line-height: 1.17;
   letter-spacing: 0.02em;
-  color: var(--main-text-color);
+  /*color: var(--main-text-color);*/
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .navigation-contact-list {
   font-weight: 500;
@@ -142,6 +144,9 @@ header {
   letter-spacing: 0.02em;
   display: flex;
   align-items: center;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .current {
@@ -173,13 +178,14 @@ header {
   margin: 0 auto;
   cursor: pointer;
   margin-top: 30px;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button-menu:hover,
-.button-menu:focus {
-  cursor: pointer;
-  transition-duration: 250ms;
-  transition-timing-function: var(--cubic-bezier);
+.main-button:hover,
+.main-button:focus {
+  color: var(--secondary-text-color);
 }
 .button-portfolio-list {
   display: flex;
@@ -199,14 +205,15 @@ header {
   border: #fff;
   border-radius: 4px;
   padding: 6px 22px;
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-portfolio-item:hover,
 .button-portfolio-item:focus-visible {
   color: var(--secondary-text-color);
   background-color: var(--fourth-color);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  transition-duration: 250ms;
-  transition-timing-function: var(--cubic-bezier);
 }
 .footer {
   padding-top: 60px;
@@ -229,12 +236,18 @@ header {
   color: var(--secondary-text-color);
   text-decoration: inherit;
   font-style: normal;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .bottom-contact-link {
   line-height: 1.71;
   color: var(--footer-color--1);
   text-decoration: inherit;
   font-style: normal;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .navigation-link:hover,
 .navigation-link:focus,
@@ -246,8 +259,6 @@ header {
 .icon-contact:hover {
   color: var(--fourth-color);
   cursor: pointer;
-  transition-duration: 250ms;
-  transition-timing-function: var(--cubic-bezier);
 }
 .navigation-contact-item:hover,
 .navigation-contact-item:focus,
@@ -256,8 +267,6 @@ header {
   color: var(--fourth-color);
   cursor: pointer;
   fill: currentColor;
-  transition-duration: 250ms;
-  transition-timing-function: var(--cubic-bezier);
 }
 
 /*end links*/
@@ -367,6 +376,9 @@ header {
 }
 .our-customers-link {
   display: block;
+  transition-property: color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .our-customers-item a:hover,
@@ -377,8 +389,7 @@ header {
 .our-customers-link:focus {
   cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  transition-duration: 250ms;
-  transition-timing-function: var(--cubic-bezier);
+  color: var(--secondary-text-color);
 }
 .about-client {
   padding: 20px 24px;
@@ -434,14 +445,14 @@ header {
   justify-content: center;
   border-radius: 50%;
   color: var(--icon-style);
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-icon-link:hover,
 .social-icon-link:focus {
-  cursor: pointer;
   color: var(--background-color-1);
   background-color: var(--fourth-color);
-  transition-duration: 250ms;
-  transition-timing-function: var(--cubic-bezier);
 }
 .lorem-icon {
   background-color: var(--fifth-color);
@@ -469,13 +480,14 @@ header {
   border: 1px solid currentColor;
   color: var(--icon-style);
   border-radius: 4px;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .our-client-link:hover,
 .our-client-link:focus {
   cursor: pointer;
   color: var(--fourth-color);
-  transition-duration: 250ms;
-  transition-timing-function: var(--cubic-bezier);
 }
 
 .our-client-logo-list svg {
@@ -509,6 +521,9 @@ header {
   height: 44px;
   border-radius: 50%;
   background-color: var(--footer-color--2);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -516,9 +531,7 @@ header {
 .social-icon-footer-link:focus {
   border-radius: 50%;
   fill: currentColor;
-  background: var(--fourth-color);
-  transition-duration: 250ms;
-  transition-timing-function: var(--cubic-bezier);
+  background-color: var(--fourth-color);
 }
 /* ----- end icons ----- */
 .footer-wrap {
@@ -533,15 +546,11 @@ header {
   font-weight: 700;
   line-height: 1.17;
   color: var(--fifth-color);
-  text-align: center;
   text-transform: uppercase;
-  padding: 27px;
-  text-align: center;
-}
-.box-text-1,
-.box-text-2,
-.box-text-3 {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 370px;
   height: 70px;
   background-color: rgba(47, 48, 58, 0.8);
@@ -565,12 +574,14 @@ header {
   background: rgba(33, 150, 243, 0.9);
   padding: 49px 45px 49px 24px;
   transform: translateY(100%);
+  transition-property: color;
   transition-duration: 250ms;
-  transition-timing-function: var(--cubic-bezier);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .not-visibility-description:hover .description,
 .our-customers-item:hover .description {
   transform: translateY(0);
+  color: var(--fifth-color);
 }
 /**************** zadanie 5 okno modalne BACKDROP ***************/
 .backdrop {
@@ -582,31 +593,29 @@ header {
   background-color: rgba(0, 0, 0, 0.2);
   transition-property: opacity, visibility;
   transition-duration: 250ms;
-  transition-timing-function: var(--cubic-bezier);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: painted;
 }
 .modal {
   position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
   width: 528px;
   height: 581px;
   border-radius: 4px;
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -50%);
 }
 .modal-close {
-  position: relative;
+  position: absolute;
   width: 30px;
   height: 30px;
-  left: 490px;
   top: 8px;
+  right: 8px;
   border-radius: 50%;
-  background-color: var(--fourth-color);
+  background-color: var(--background-color-1);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 }
