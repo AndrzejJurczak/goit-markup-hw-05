@@ -381,20 +381,16 @@ header {
   flex-wrap: wrap;
   gap: 30px;
 }
-.our-customers-link {
-  display: block;
-}
 
 .our-customers-item a:hover,
-.our-customers-item a:focus,
-.our-customers-item:hover,
-.our-customers-item:focus,
-.our-customers-link:hover,
-.our-customers-link:focus {
+.our-customers-item a:focus
+/*.our-customers-item:hover,
+.our-customers-item:focus*/ {
   cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: var(--secondary-text-color);
 }
+
 .about-client {
   padding: 20px 24px;
   border-right: 1px solid var(--borderColor);
@@ -503,14 +499,18 @@ header {
   fill: currentColor;
 }
 
-.social-title {
+.social-title,
+.newsletter-title {
+  font-family: inherit;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--secondary-text-color);
   margin-bottom: 20px;
+  line-height: 1.17;
 }
 .social-icon-footer {
   margin-left: 70px;
+  margin-right: 78px;
 }
 .social-icon-footer-list {
   display: flex;
@@ -585,22 +585,25 @@ header {
   position: absolute;
   left: 0;
   top: 0;
-  cursor: pointer;
   background: rgba(33, 150, 243, 0.9);
   transform: translateY(100%);
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.not-visibility-description:hover .hidden-description {
-  transform: translateY(0);
+.our-customers-link {
+  display: block;
+  transition: box-shadow;
 }
 
+.our-customers-link:hover .hidden-description,
+.our-customers-link:focus .hidden-description {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transform: translateY(0);
+}
 /**************** zadanie 5 okno modalne BACKDROP ***************/
 .close-x {
   width: 8px;
   height: 8px;
-  fill: currentColor;
 }
 
 .backdrop {
@@ -610,10 +613,9 @@ header {
   left: 0;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.2);
-  transition-property: opacity, visibility;
+  transition-property: opacity, visibility, transform;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  pointer-events: painted;
 }
 
 .modal {
@@ -628,11 +630,6 @@ header {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   transform: translate(-50%, -50%);
 }
-/*.modal-close svg {
-  width: 8px;
-  height: 8px;
-}
-  */
 .modal-close {
   position: absolute;
   width: 30px;
@@ -649,9 +646,43 @@ header {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: scale(0.1) rotate(360deg);
+  transform: scale(0.5) rotate(720deg);
 }
 /************ END BACKDROP ************************/
 .about-client > h3 {
   text-decoration: none;
+}
+/* zadanie 6*/
+.form-button,
+.modal-button {
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  width: 200px;
+  height: 50px;
+  border-radius: 4px;
+  color: var(--fifth-color);
+  background-color: var(--fourth-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+.form-send {
+  width: 24px;
+  height: 24px;
+  fill: var(--background-color-1);
+}
+.subscription {
+  width: 358px;
+  height: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subscription .form-email {
+  width: 358px;
+  height: 50px;
+}
+.subscription .form-button {
+  width: 358px;
+  height: 50;
 }
